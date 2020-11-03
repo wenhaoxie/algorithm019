@@ -31,7 +31,7 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public void rotate(int[] nums, int k) {
-        if(nums == null) {
+        if (nums == null) {
             return;
         }
         k  = k % nums.length;
