@@ -50,26 +50,20 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int maxArea(int[] height) {
-        if (height == null || height.length <= 1) {
-            return 0;
-        }
-        int left = 0, right = height.length -1;
-        int temp = 0;
-        int res = 0;
-        while (left < right) {
-            if (height[left] > height[right]) {
-                res = Math.max(res, height[right] * (right - left));
-                temp = height[right];
-                while(right > 0 && height[right] <= temp) right--;
-            } else {
-                res = Math.max(res, height[left] * (right - left));
-                temp = height[left];
-                while(left < height.length && height[left] <= temp) left++;
+        public int maxArea(int[] height) {
+        int left = 0;
+        int right = height.length-1;
+        int size= 0;
+        
+        while(left<right){
+            size = Math.max(size, (right-left)*Math.min(height[right], height[left]));
+            if (height[left]<height[right]){
+                left++;
+            }else{
+                right--;
             }
         }
-        return res;
-
+        return size;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
