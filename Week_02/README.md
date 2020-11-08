@@ -1,2 +1,3 @@
 学习笔记
-本周数据结构方面包括hashmap, tree, graph
+hashmap, tree, b tree, bs tree, heap, b heap, graph
+data structure part will be finished this week
